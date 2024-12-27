@@ -12,15 +12,17 @@ export class AppComponent implements OnInit {
   title = 'Angular course'
 
   products: IProduct[] = []
-
+  loading = false
   
   constructor(
     public productsService: ProductsService,
   ) {}
 
   ngOnInit(): void {
+    this.loading = true
     this.productsService.getAll().subscribe(products => {
       this.products = products
+      this.loading = false
     })
   }
 }
