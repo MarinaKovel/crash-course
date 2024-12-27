@@ -10,20 +10,5 @@ import { ModalService } from './services/modal.service';
   standalone: false,
   styleUrl: './app.component.scss'
 })
-export class AppComponent implements OnInit {
-  title = 'Angular course'
-  loading = false
-  term = ''
-  
-  constructor(
-    public productsService: ProductsService,
-    public modalService: ModalService
-  ) {}
-
-  ngOnInit(): void {
-    this.loading = true
-    this.productsService.getAll().subscribe(() => {
-      this.loading = false
-    })
-  }
+export class AppComponent {
 }
