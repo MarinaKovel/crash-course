@@ -2,6 +2,7 @@ import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 import { AppComponent } from './app.component';
 import { ProductComponent } from './components/product/product.component';
+import { HttpClientModule } from '@angular/common/http';
 
 
 @NgModule({
@@ -11,6 +12,7 @@ import { ProductComponent } from './components/product/product.component';
   imports: [
     BrowserModule,
     ProductComponent,
+    HttpClientModule,
   ],
   providers: [],
   bootstrap: [AppComponent]
