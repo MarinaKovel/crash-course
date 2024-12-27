@@ -11,5 +11,5 @@ import { CommonModule } from '@angular/common';
 export class ProductComponent {
     @Input() product: IProduct
 
-    //details = false;
+    details = false;
 }
