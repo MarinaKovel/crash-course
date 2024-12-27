@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { FormControl, FormGroup, ReactiveFormsModule, Validators } from '@angular/forms';
 import { CommonModule } from '@angular/common';
 import { ProductsService } from '../../services/products.service';
+import { ModalService } from '../../services/modal.service';
 //import { ModalService } from '../../services/modal.service';
 
 @Component({
@@ -24,24 +25,24 @@ export class CreateProductComponent implements OnInit {
     return this.form.controls.title as FormControl
   }
 
-  constructor(private productService: ProductsService) {}
+  constructor(private productService: ProductsService, private modalService: ModalService ) {}
 
   ngOnInit(): void {
   }
 
   submit() {
-    // this.productService.create({
-    //     title: this.form.value.title as string,
-    //     price: 13.5,
-    //     description: 'lorem ipsum set',
-    //     image: 'https://i.pravatar.cc',
-    //     category: 'electronic',
-    //     rating: {
-    //       rate: 4,
-    //       count: 1
-    //     }
-    // }).subscribe(() => {
-    //   this.modalService.close()
-    // })
+    this.productService.create({
+        title: this.form.value.title as string,
+        price: 13.5,
+        description: 'lorem ipsum set',
+        image: 'https://i.pravatar.cc',
+        category: 'electronic',
+        rating: {
+          rate: 4,
+          count: 1
+        }
+    }).subscribe(() => {
+      this.modalService.close()
+    })
   }
 }
