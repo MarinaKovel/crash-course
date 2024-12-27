@@ -24,6 +24,7 @@ export class ProductsService {
         }).pipe(
             delay(200),
             retry(2),
+            tap(products => this.products = products),
             catchError(this.errorHandler.bind(this))
         )
     }
@@ -31,7 +32,7 @@ export class ProductsService {
     create(product: IProduct): Observable<IProduct> {
         return this.http.post<IProduct>('https://fakestoreapi.com/products', product)
             .pipe(
-                tap(prod => this.products.push(prod))
+                 tap(prod => this.products.push(prod))
             )
     }
 
