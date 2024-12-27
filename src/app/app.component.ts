@@ -13,6 +13,7 @@ export class AppComponent implements OnInit {
   title = 'Angular course'
   loading = false
   products$: Observable<IProduct[]>
+  term = ''
   
   constructor(
     public productsService: ProductsService,

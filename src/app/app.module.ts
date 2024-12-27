@@ -4,17 +4,21 @@ import { AppComponent } from './app.component';
 import { ProductComponent } from './components/product/product.component';
 import { HttpClientModule } from '@angular/common/http';
 import { GlobalErrorComponent } from './components/global-error/global-error.component';
+import { FormsModule } from '@angular/forms';
+import { FilterProductsPipe } from './pipes/filter-products.pipe';
 
 
 @NgModule({
   declarations: [
     AppComponent,
     GlobalErrorComponent,
+    FilterProductsPipe,
   ],
   imports: [
     BrowserModule,
     ProductComponent,
     HttpClientModule,
+    FormsModule
   ],
   providers: [],
   bootstrap: [AppComponent]
