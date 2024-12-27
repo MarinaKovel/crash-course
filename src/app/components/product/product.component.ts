@@ -1,5 +1,5 @@
 import {Component, Input} from '@angular/core';
-//import { IProduct } from '../../models/product';
+import { IProduct } from '../../models/product';
 import { CommonModule } from '@angular/common';
 
 @Component({
@@ -9,7 +9,7 @@ import { CommonModule } from '@angular/common';
 })
 
 export class ProductComponent {
-    //@Input() product: IProduct
+    @Input() product: IProduct
 
     //details = false;
 }
